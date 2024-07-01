@@ -6,49 +6,48 @@
     <title>To do list</title>
     
     <!-- Icon -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    
-      <link rel="stylesheet" href="./main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="./main.css">
     <script defer src="./main.js"></script>
 </head>
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <!--title -->
-    <h1>todos</h1>
+  <!--title -->
+  <div class="title">todos</div>
 
-    <!-- 진행중인 목록 -->
-    <div class="list-container">
-      <div class="header">
-        <h2 class="onGoing">Ongoing</h2>
-        <button id="addBtn" onclick="openModal()" class="material-icons">add</button>
-      </div>
-      <ul id="todos-list">
-
-      </ul>
+  <!-- 진행중인 목록 -->
+  <div class="list-container">
+    <div class="header">
+      <div class="onGoing">Ongoing</div>
+      <button id="openModalBtn" class="material-icons">add</button>
     </div>
+    <ul id="todoList">
 
-    <!-- 완료된 목록 -->
-    <div class="list-container">
-      <h2 class="completed">Completed</h2>
-      <ul id="completed-list">
-
-      </ul>
-    </div>
+    </ul>
   </div>
 
-  <!-- Modal -->
-  <!-- <div id="myModal" class="modal">
-      <div class="modal-content">
-          <button id="close" onclick="closeModal()"" class="material-icons">close</button>
-          <h2 id="modalTitle">Add todos</h2>
-          <input type="text" id="title" placeholder="제목">
-          <textarea id="description" placeholder="내용을 입력하세요."></textarea>
-          <button id="saveBtn" onclick="saveItem()">save</button>
-      </div>
-  </div> -->
+  <!-- 완료된 목록 -->
+  <div class="list-container">
+    <div class="completed">Completed</div>
+    <ul id="completedList">
+
+    </ul>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span> 
+      <h2 id="modalTitle">Add todos</h2>
+      <input type="text" id="todoTitle" placeholder="제목을 입력하세요." /> 
+      <textarea id="todoDescription" placeholder="내용을 입력하세요."></textarea> 
+      <button id="saveBtn">save</button> 
+  </div>
+</div>
 
 </body>
 </html>
