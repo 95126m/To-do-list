@@ -4,7 +4,7 @@
 
 ## 디자인 정의
 
-![defalt](./images/design.jpg)
+![defalt](./images/brain-design.jpg)
 
 대략적인 디자인 레이아웃이라서, 추후에 변경될 가능성이 높습니다.
 

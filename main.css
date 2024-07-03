@@ -1,9 +1,9 @@
+/* 전반적인 요소들 */
 * {
   box-sizing: border-box;
 }
 
-html {
-  background: url("./images/background-image1.jpg") no-repeat fixed;
+body {
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -16,12 +16,23 @@ p.korean {
 p.english {
   font-family: Arial, "Noto Sans KR";
 }
+#backgroundVideo {
+  position: fixed;  /* 고정된 위치 */
+  top: 0;
+  left: 0;
+  width: 100%;      /* 전체 너비 */
+  height: 100%;     /* 전체 높이 */
+  object-fit: cover;/* 비율 유지하며 전체를 덮기 */
+  z-index: -1;      /* 컨텐츠 뒤에 위치하도록 설정 */
+}
+
+/* 개인적인 요소들 */
 .container {
   background-color: rgba(255, 255, 255, 0.075);
   width: 100vh;
   min-height: 50vh;
   height: auto;
-  margin-top: 10vh;
+  margin-top: 25vh;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 20px;
