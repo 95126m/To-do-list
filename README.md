@@ -39,8 +39,6 @@ n latest
 n prune
 ```
 
----
-
 ## 기능 정의서
 
 ![defalt](./images/skill.jpg)
