@@ -8,52 +8,58 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, "Noto Sans KR";
+  font-family: "Nanum Gothic", "Noto Sans KR", Arial;
+  overflow: hidden; 
 }
-p.korean {
-  font-family: "Noto Sans KR", Arial;
-}
-p.english {
-  font-family: Arial, "Noto Sans KR";
-}
+
 #backgroundVideo {
-  position: fixed;  /* 고정된 위치 */
+  position: fixed;  
   top: 0;
   left: 0;
-  width: 100%;      /* 전체 너비 */
-  height: 100%;     /* 전체 높이 */
-  object-fit: cover;/* 비율 유지하며 전체를 덮기 */
-  z-index: -1;      /* 컨텐츠 뒤에 위치하도록 설정 */
+  width: 100%;      
+  height: 100%;     
+  object-fit: cover;
+  z-index: -1;     
 }
 
 /* 개인적인 요소들 */
 .container {
   background-color: rgba(255, 255, 255, 0.075);
-  width: 100vh;
-  min-height: 50vh;
-  height: auto;
-  margin-top: 25vh;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 850px;
+  min-height: 30vh;
+  margin-top: 10vh;
   border-radius: 8px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  position: relative;
 }
 
-.title {
-  color: #fff;
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 50px;
-  font-weight: 700;
+.title-container {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
 .list-container {
-  width: 100%;
-  max-width: 600px;
-  text-align: center;
+  width: 850px;
   position: relative;
+}
+
+#completedList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 50px;
+  font-weight: 700;
 }
 
 .header {
@@ -72,53 +78,23 @@ p.english {
   transform: translateX(-50%);
 }
 
-.material-icons {
-  height: 30px;
-  width: 30px;
-  margin: 0;
-  font-size: 24px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: transparent;
-  transition: background-color 0.3s;
-}
-
-.material-icons:hover {
-  background-color: rgba(255, 255, 255, 0.226);
-}
-
 .onGoing,
 .completed {
+  font-family: "Raleway";
   color: #fff;
   font-size: 30px;
-  font-weight: 700;
   width: 100%;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.268);
-  border-radius: 20px;
-  padding: 10px;
+  height: 50px;
+  text-align: left;
+  padding-left: 55px;
+  background-color: #ffffff2d;
+  display: flex;
+  align-items: center;
 }
 
-.onGoing {
-  margin-bottom: 20px;
-}
-
-.completed {
-  margin-top: 20px;
-}
-
-/* MODAL */
+/* 모달 */
 .modal {
-  /* modal 이 초반 화면에서 보이지 않음 */
-  display: none; 
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -128,20 +104,21 @@ p.english {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .modal-content {
   position: relative;
   padding: 20px;
-  width: 400px; 
-  height: 300px; 
-  background-color: #f5f5f5; 
-  /* border: 3px solid #8cccd6; */
+  width: 400px;
+  height: 350px;
+  background-color: #f5f5f5;
   margin: 15% auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  align-items: center; /* 추가된 부분 */
+  align-items: center;
 }
+
 .modal-content .close {
   position: absolute;
   top: 10px;
@@ -150,44 +127,69 @@ p.english {
   font-size: 25px;
   cursor: pointer;
 }
+
 .modal-content h2 {
   color: #81c0c9;
   text-align: center;
   width: 100%;
-  margin: 0; 
-  padding-top: 20px; 
+  margin: 0;
+  padding-top: 20px;
 }
+
+.modal-content input,
+.modal-content textarea,
 input,
 textarea {
+  background-color: #ffffff; 
   display: block;
-  width: calc(100% - 40px); 
+  width: calc(100% - 40px);
   margin: 10px auto;
-  height: 50px;
   text-align: center;
   padding: 0 10px;
   font-size: 16px;
   border: none;
   border-radius: 8px;
 }
+
+.modal-content textarea {
+  height: 85px;
+}
+
+.modal-content input:disabled,
+.modal-content textarea:disabled {
+  background-color: transparent;
+  color: #72a1a8;
+}
+
 input {
   margin-top: 5%;
   height: 50px;
 }
+
 textarea {
   margin-top: 1%;  
   height: 80px; 
 }
+
 input::placeholder,
 textarea::placeholder {
   font-family: "Noto Sans KR", Arial;
   text-align: center;
   line-height: 50px;
 }
+
 input:focus,
 textarea:focus {
   outline: none;
 }
-#saveBtn {
+
+#dateInput {
+  height: 20px;
+  font-size: 13px;
+}
+
+#saveBtn,
+.edit-btn {
   background-color: #81c0c9;
   border-radius: 20%;
   color: white;
@@ -203,35 +205,132 @@ textarea:focus {
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  transition: background-color 0.5s;
-}
-#saveBtn:hover {
-  background-color: rgb(136, 216, 228);
 }
 
-/* List */
-ul, li {
-  list-style-type: none;
+/* 리스트 */
+#todoList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0;
-  font-size: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
 }
+
+.todo-item {
+  background-color: rgba(0, 0, 0, 0.068);
+  max-width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.todo-item:hover {
+  border: 2px solid rgba(255, 255, 255, 0.479);
+}
+
+ul, li {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 25px;
+}
+
 li {
-  height: 80px;
-  width: 150px;
-  color: white;
+  font-size: 20px;
+  height: 100px;
+  width: 80px;
+  color: rgb(255, 255, 255);
   overflow: hidden;        
   text-overflow: ellipsis;  
-  font-family: "Noto Sans KR", Arial;
 }
-.todo-item {
-  background-color: rgba(255, 255, 255, 0.268);
-  border-radius: 5px;
-  max-width: 35%;
+
+li.completed-item {
+  color: rgb(114, 114, 114);
+}
+
+li.completed-item:hover {
+  border: none;
+}
+
+/* 버튼 스타일 */
+.material-icons {
+  font-size: 24px;
+  position: absolute;
+  display: fixed;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#openModalBtn {
+  height: 30px;
+  width: 30px;
+  color: #ffffff; 
+  left: 10px;
+  font-size: 30px;
+}
+
+#resetBtn {
+  top: 10px;
+  right: 0;
+}
+
+#checkBtn {
+  height: 30px;
+  width: 30px;
+  color: #ffffff;
+  left: 14px;
+  top: 10px;
+  font-size: 20px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  gap: 10px;
+}
+
+.complete-btn {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
   padding: 0;
-  margin: 10px;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 20px; 
+  bottom: 0px;
+}
+
+.complete-btn .material-icons {
+  right: 0;
+  bottom: 3px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.complete-btn .material-icons:hover {
+  color: #585858;
 }
